@@ -1,0 +1,18 @@
+
+server:
+  port: 7001
+eureka:
+  instance:
+    hostname: eureka7001  #eureka \u670D\u52A1\u7AEF\u7684\u5B9E\u529B\u540D\u79F0
+  client:
+    register-with-eureka: false  #false \u8868\u793A\u4E0D\u5411\u6CE8\u518C\u4E2D\u5FC3\u6CE8\u518C\u81EA\u5DF1
+    fetch-registry: false  #false \u8868\u793A\u81EA\u5DF1\u5C31\u662F\u6CE8\u518C\u4E2D\u5FC3\u3002\u4E0D\u9700\u8981\u53BB\u68C0\u7D22\u670D\u52A1
+    service-url:
+      #集群时指向其它eureka server客户端
+#      defaultZone: http://eureka7002.com:7002/eureka/
+      #单机时指向自己
+      defaultZone: http://eureka7001.com:7001/eureka/
+  server:
+    #关闭自我保护
+#    enable-self-preservation: true
+#    eviction-interval-timer-in-ms: 0
